@@ -1,0 +1,100 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Poppins", serif;
+    font-size: 62.5%;
+  }
+
+  h1 {
+    font-size: 5.8rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  h5 {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  h6 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
+  li {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  button {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+@layer components {
+  .input {
+    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
+  }
+
+  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+
+  @keyframes loading {
+    20% {
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+    }
+    40% {
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+    }
+    60% {
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+    }
+    80% {
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+    }
+  }
+}
